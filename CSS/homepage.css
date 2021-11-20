@@ -21,7 +21,7 @@ body {
     
    }
    .name{
-    margin-left: 170px;
+    margin-left: 100px;
     font-size: 35px;
     font-family: 'Times New Roman', Times, serif;
     font-weight:500;
@@ -29,7 +29,7 @@ body {
     
    }
    .name1{
-    margin-left: 340px;
+    margin-left: 350px;
     font-size: 35px;
     font-family: 'Times New Roman', Times, serif;
     font-weight:500;
@@ -38,14 +38,14 @@ body {
    }
    
    .mail1{
-    margin-left: 320px;
+    margin-left: 300px;
     font-size:15px;
     font-family: 'Times New Roman', Times, serif;
     font-weight:100;
     color:#115285;
    }
    .mail{
-    margin-left: 120px;
+    margin-left: 50px;
     font-size:15px;
     font-family: 'Times New Roman', Times, serif;
     font-weight:100;
