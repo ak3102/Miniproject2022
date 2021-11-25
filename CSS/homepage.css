@@ -135,6 +135,7 @@ body {
 #about{
     margin: 100px;
     margin-top: 200px;
+    background-color: antiquewhite;
 }
 #abt{
     text-align: center;
@@ -143,6 +144,7 @@ body {
 }
 #contact{
     margin: 50px;
+    background-color: rgb(218, 250, 215);
 }
 #con{
     text-align: center;
@@ -193,6 +195,7 @@ body {
   }
 #faqs{
     margin: 50px;
+    background-color: rgb(255, 255, 182);
 
 }
 #fq{

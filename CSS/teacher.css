@@ -11,6 +11,12 @@ body {
     height: 40px;
     width: 40px;
 }
+h1{
+  color:white;
+  text-align: center;
+  font-size: 60px;
+  margin-bottom: -120px;
+}
 
 ul.Nav2 {
     list-style-type:none;
