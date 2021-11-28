@@ -10,31 +10,91 @@
 </head>
 
 <body>
-    <div class="login">
+  <a href="../index.html" ><p class="back" style="position: absolute;left: 40px;font-size:25px;top: 20px;"><span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>back</p></a>
+     <div class="login">
+      
         <h1>Login</h1>
         <div class="textbox">
+          <form action="" id = "form">
             <i class="fa fa-user" aria-hidden="true"></i>
-            <input type="text" placeholder="Username" name="" value="">
+            
+            <input type="email" name="" id="email1"  placeholder="Enter email id:" /> <br />
 
         </div>
         <div class="textbox">
             <i class="fa fa-lock" aria-hidden="true"></i>
-            <input type="password" placeholder="Password" name="" value="">
+            <input type="password" name="" id="pass1" placeholder="Password"/> <br />
+
         </div>
         
         <div class="check">
             <input type="checkbox" placeholder="">Remember me
         </div>
-        <a href="../HTML/admin.html">
-        <input class="btn" type="button" name="" value="Log in"> </a>
+         <!-- <a href="../HTML/admin.html"> --> 
+        <!-- <input class="btn" type="button" id="login">Log in -->
+        <!-- <button class = "btn" id = "login"> Log In</button>
+       </a> --> 
+      </form>
+       
+    <button id="login" class="btn">Login</button>
         <div class="pass">
             <p><a href="#">Forgot Password</a></p>
-            <!-- <p><a href="../HTML/forgotpassword.html">Forgot Password</a></p> -->
+            <!-- <p><a href="../HTML/forgotpassword.html">Forgot Password</a></p>   -->
         </div>
         <div class="acct">
             <p><a href="./signup.html">Don't have an account !</a></p>
         </div>
+     
     </div>
-</body>
 
+    
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBuBNnKt824CYo1MVNoa9QoG8DRvwPVs30",
+        authDomain: "authentication-a15de.firebaseapp.com",
+        projectId: "authentication-a15de",
+        storageBucket: "authentication-a15de.appspot.com",
+        messagingSenderId: "209432881038",
+        appId: "1:209432881038:web:bb26c5dd3fc7cc6e2126df",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+       var form = document.getElementById("form");
+      document.getElementById("login").addEventListener("click", function () {
+        const email1 = document.getElementById("email1").value;
+        const pass1 = document.getElementById("pass1").value;
+
+        signInWithEmailAndPassword(auth, email1, pass1)
+          .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            alert("logged in successfully!!");
+            window.location.replace("./admin.html")
+            form.reset()
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorCode + errorMessage);
+          });
+      });
+    </script>
+   
+</body>
 </html>

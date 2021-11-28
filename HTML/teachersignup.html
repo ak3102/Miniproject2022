@@ -4,13 +4,13 @@
       <title>HTML FORM</title>
       <link href="../CSS/signup.css" type="text/css" rel="stylesheet" />
     </head>
-    <body>
+    <body  style="background-image: url(../image/bg2.jpg)">
       <div class="main">
-        <h1 style="color: rgb(7, 8, 8)">Register Yourself here</h1>
+        <h1 style="color: rgb(7, 8, 8)">ADD New Teacher</h1>
         <form action="" id="form">
           <p class="para">
             <i class="fa fa-user" aria-hidden="true"></i>
-            Enter your Name <br />
+            Enter Teacher Name <br />
             <input
               type="text"
               name="text"
@@ -23,7 +23,20 @@
 
           <p class="para">
             <i class="fa fa-user" aria-hidden="true"></i>
-            Enter your mail id <br />
+            Enter Teacher ID <br />
+            <input
+              type="text"
+              name="text"
+              id="username"
+              placeholder="Teacher ID"
+              size="50"
+            />
+            <br />
+          </p>
+
+          <p class="para">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            Enter teacher mail id <br />
             <input
               type="email"
               name="mail"
@@ -36,7 +49,7 @@
 
           <p class="para">
             <i class="fa fa-lock" aria-hidden="true"></i>
-            Create your password <br />
+            Create password <br />
             <input
               type="password"
               name="pass"
@@ -73,7 +86,7 @@
             color: white;
           "
         >
-          signup
+          ADD
         </button>
       </div>
 
@@ -90,14 +103,13 @@
 
         // Your web app's Firebase configuration
         const firebaseConfig = {
-          apiKey: "AIzaSyBuBNnKt824CYo1MVNoa9QoG8DRvwPVs30",
-          authDomain: "authentication-a15de.firebaseapp.com",
-          projectId: "authentication-a15de",
-          storageBucket: "authentication-a15de.appspot.com",
-          messagingSenderId: "209432881038",
-          appId: "1:209432881038:web:bb26c5dd3fc7cc6e2126df",
+          apiKey: "AIzaSyBhPtnZl7wyDuLU6pydAIJ7w61W45VRpAI",
+          authDomain: "teacher-auth-679b3.firebaseapp.com",
+          projectId: "teacher-auth-679b3",
+          storageBucket: "teacher-auth-679b3.appspot.com",
+          messagingSenderId: "525843272739",
+          appId: "1:525843272739:web:83ac3a61855401064acd96",
         };
-
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);

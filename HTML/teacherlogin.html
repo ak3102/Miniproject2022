@@ -10,28 +10,85 @@
 </head>
 
 <body>
-    <div class="login">
+    
+    <a href="../index.html" ><p class="back" style="position: absolute;left: 40px;font-size:25px;top: 20px;"><span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>back</p></a>
+     <div class="login">
+      
         <h1>Login</h1>
         <div class="textbox">
+          
             <i class="fa fa-user" aria-hidden="true"></i>
-            <input type="text" placeholder="Username" name="" value="">
+            
+            <input type="email" name="" id="email1"  placeholder="Enter email id:" /> <br />
 
         </div>
         <div class="textbox">
             <i class="fa fa-lock" aria-hidden="true"></i>
-            <input type="password" placeholder="Password" name="" value="">
+            <input type="password" name="" id="pass1" placeholder="Password"/> <br />
+
         </div>
         
         <div class="check">
             <input type="checkbox" placeholder="">Remember me
         </div>
-        <a href="../HTML/teacher.html">
-        <input class="btn" type="button" name="" value="Log in"> </a>
+          
+
+       
+    <button id="login" class="btn">Login</button>
         <div class="pass">
             <p><a href="#">Forgot Password</a></p>
-            <!-- <p><a href="../HTML/forgotpassword.html">Forgot Password</a></p> -->
+            <!-- <p><a href="../HTML/forgotpassword.html">Forgot Password</a></p>   -->
         </div>
+        
+     
     </div>
+
+    
+
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+      import {
+        getAuth,
+        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+  apiKey: "AIzaSyBhPtnZl7wyDuLU6pydAIJ7w61W45VRpAI",
+  authDomain: "teacher-auth-679b3.firebaseapp.com",
+  projectId: "teacher-auth-679b3",
+  storageBucket: "teacher-auth-679b3.appspot.com",
+  messagingSenderId: "525843272739",
+  appId: "1:525843272739:web:83ac3a61855401064acd96"
+};
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+     
+      document.getElementById("login").addEventListener("click", function () {
+        const email1 = document.getElementById("email1").value;
+        const pass1 = document.getElementById("pass1").value;
+
+        signInWithEmailAndPassword(auth, email1, pass1)
+          .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+            alert("logged in successfully!!");
+            window.location.replace("./teacher.html")
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorCode + errorMessage);
+          });
+      });
+    </script>
 </body>
 
 </html>

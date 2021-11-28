@@ -6,13 +6,17 @@
 .para
 {
    margin:10px 10px 10px 10px;
+
+}
+input{
+   font-size: large;
 }
 body
 {
    background-image:url("../image/lgdh.jpg");
    background-repeat:no-repeat;
    background-size:cover;
-   font-size:20px;
+   font-size:25px;
    height: 100vh;
    position: fixed;
    margin-top: -120px;

@@ -4,64 +4,77 @@
       <title>HTML FORM</title>
       <link href="../CSS/signup.css" type="text/css" rel="stylesheet" />
     </head>
-    <body>
+    <body  style="background-image: url(../image/bg2.jpg)">
       <div class="main">
-        <h1 style="color: rgb(7, 8, 8)">Register Yourself here</h1>
-        <form action="" id="form">
-          <p class="para">
+        <h1 style="color: rgb(7, 8, 8)">Register Department</h1>
+     <form action="" id= "form">
+        <p class="para">
             <i class="fa fa-user" aria-hidden="true"></i>
-            Enter your Name <br />
+            Enter Department Name <br />
             <input
               type="text"
               name="text"
               id="username"
-              placeholder="Enter Your Name"
+              placeholder="Enter Department Name"
               size="50"
             />
             <br />
           </p>
 
-          <p class="para">
-            <i class="fa fa-user" aria-hidden="true"></i>
-            Enter your mail id <br />
-            <input
-              type="email"
-              name="mail"
-              id="email"
-              placeholder="Enter Mail id"
-              size="50"
-            />
-            <br />
-          </p>
-
-          <p class="para">
-            <i class="fa fa-lock" aria-hidden="true"></i>
-            Create your password <br />
-            <input
-              type="password"
-              name="pass"
-              id="pass"
-              placeholder="Enter Password"
-              size="50"
-            />
-            <br />
-          </p>
-          <span style="margin-top: 15px">
-            <input type="checkbox" onclick="myFunction()" />Show Password
-          </span>
-
-          <script>
-            function myFunction() {
-              var x = document.getElementById("pass");
-              if (x.type === "password") {
-                x.type = "text";
-              } else {
-                x.type = "password";
-              }
-            }
-          </script>
+        <p class="para">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          Enter Department email id <br />
+          <input
+            type="email"
+            name="mail"
+            id="email"
+            placeholder="Enter Mail id"
+            size="50"
+          />
           <br />
-        </form>
+        </p>
+
+        <p class="para">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            Enter Deparment Id <br />
+            <input
+              type="text"
+              name="text"
+              id="username"
+              placeholder="Enter Department Id"
+              size="50"
+            />
+            <br />
+          </p>
+        
+        <p class="para">
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          Create password <br />
+          <input
+            type="password"
+            name="pass"
+            id="pass"
+            placeholder="Enter Password"
+            size="50"
+          />
+          <br />
+        </p>
+        <span style="margin-top: 15px">
+          <input type="checkbox" onclick="myFunction()" />Show Password
+        </span>
+
+        <script>
+          function myFunction() {
+            var x = document.getElementById("pass");
+            if (x.type === "password") {
+              x.type = "text";
+            } else {
+              x.type = "password";
+            }
+          }
+        </script>
+        <br />
+    </form>
         <button
           id="signup"
           class="btn"
@@ -90,19 +103,19 @@
 
         // Your web app's Firebase configuration
         const firebaseConfig = {
-          apiKey: "AIzaSyBuBNnKt824CYo1MVNoa9QoG8DRvwPVs30",
-          authDomain: "authentication-a15de.firebaseapp.com",
-          projectId: "authentication-a15de",
-          storageBucket: "authentication-a15de.appspot.com",
-          messagingSenderId: "209432881038",
-          appId: "1:209432881038:web:bb26c5dd3fc7cc6e2126df",
+          apiKey: "AIzaSyDNrFAC_hHP8uvo5YQkMLIIdYAe-2RwmYs",
+          authDomain: "department-auth.firebaseapp.com",
+          projectId: "department-auth",
+          storageBucket: "department-auth.appspot.com",
+          messagingSenderId: "498094658611",
+          appId: "1:498094658611:web:818f397e0abe8a7fc87f46",
         };
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
 
-        var form = document.getElementById("form");
+       var form = document.getElementById("form");
         document
           .getElementById("signup")
           .addEventListener("click", function () {
@@ -114,11 +127,8 @@
                 // Signed in
                 const user = userCredential.user;
                 console.log("created");
-                alert(
-                  document.getElementById("username").value +
-                    " is added to database"
-                );
-                form.reset();
+                alert(document.getElementById("username").value + " is added to database");
+                 form.reset();
 
                 // ...
               })
