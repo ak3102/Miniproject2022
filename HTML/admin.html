@@ -62,5 +62,64 @@
         </div>
         </a>
     </div>
+
+
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
+        import {
+          getAuth,
+          createUserWithEmailAndPassword,
+          signInWithEmailAndPassword,
+        } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+  
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyBuBNnKt824CYo1MVNoa9QoG8DRvwPVs30",
+          authDomain: "authentication-a15de.firebaseapp.com",
+          projectId: "authentication-a15de",
+          storageBucket: "authentication-a15de.appspot.com",
+          messagingSenderId: "209432881038",
+          appId: "1:209432881038:web:bb26c5dd3fc7cc6e2126df",
+        };
+  
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+  
+        //  var form = document.getElementById("form");
+        // document.getElementById("login").addEventListener("click", function () {
+        //   const email1 = document.getElementById("email1").value;
+        //   const pass1 = document.getElementById("pass1").value;
+  
+        //   signInWithEmailAndPassword(auth, email1, pass1)
+        //     .then((userCredential) => {
+        //       // Signed in
+        //       const user = userCredential.user;
+        //       alert("logged in successfully!!");
+        //       window.location.replace("./admin.html")
+        //       form.reset()
+        //       // ...
+        //     })
+        //     .catch((error) => {
+        //       const errorCode = error.code;
+        //       const errorMessage = error.message;
+        //       alert(errorCode + errorMessage);
+        //     });
+        // });
+
+        firebase.auth().onAuthStateChanged((user)=>{
+    if(!user){
+        location.replace("./login.html")
+    }else{
+        // document.getElementById("user").innerHTML = "Hello, "+user.email
+        location.replace("./admin.html")
+    }
+})
+
+      </script>
 </body>
 </html>

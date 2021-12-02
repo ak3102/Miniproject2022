@@ -17,11 +17,11 @@ body {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-    margin-right: 60px;
+    margin-right: 120px;
     
    }
    .name{
-    margin-left: 80px;
+    margin-left: 60px;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     font-weight:500;
@@ -29,11 +29,13 @@ body {
     
    }
    .name1{
-    margin-left: 260px;
+    margin-left: -650px;
+    margin-top: -500;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     font-weight:500;
     color:#115285;
+   
    
    }
    

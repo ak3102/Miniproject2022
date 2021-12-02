@@ -63,6 +63,7 @@
           <br />
         </form>
         <button
+          type="submit"
           id="signup"
           class="btn"
           style="
@@ -76,6 +77,44 @@
           signup
         </button>
       </div>
+
+      <script>
+        const form = document.getElementById("form");
+        const username = document.getElementById("username");
+        const email1 = document.getElementById("email");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          checkInput();
+        });
+
+        function checkInput() {
+          const usernameValue = username.value.trim();
+          const emailValue = email1.value.trim();
+
+          if (usernameValue === "") {
+            alert(username, "Username can not be blank");
+          } else {
+            alert(username);
+          }
+
+          if (!isEmailValid(emailValue)) {
+            alert(email1, "Email ID is not Valid");
+          } else {
+            alert(email1);
+          }
+        }
+        //Functions
+        function isEmailValid(emailValid) {
+          return /^([a-zA-Z0-9_\.\-]+)@([a-zA-Z0-9]+)\.([a-zA-Z]{2,3})$/.test(
+            emailValid
+          );
+        }
+
+        // function isUsernameValid(usernameValue) {
+        //   return /^[A-Za-z]\\w{5, 29}$/.test(usernameValue);
+        // }
+      </script>
 
       <script type="module">
         // Import the functions you need from the SDKs you need
@@ -108,7 +147,17 @@
           .addEventListener("click", function () {
             const email = document.getElementById("email").value;
             const password = document.getElementById("pass").value;
+            const username = document.getElementById("username");
+            const usernameValue = username.value.trim();
 
+            if (!isEmailValid(email)) {
+              alert("email is not valid");
+              return;
+            }
+            if (usernameValue === "") {
+              alert("Username can not be blank");
+              return;
+            } 
             createUserWithEmailAndPassword(auth, email, password)
               .then((userCredential) => {
                 // Signed in
